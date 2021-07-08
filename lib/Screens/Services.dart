@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/Screens/Search_Location.dart';
 
 const titlestyle = TextStyle(fontSize: 20,color: Colors.black);
 
@@ -25,28 +26,35 @@ class _ServicesState extends State<Services> {
             children: [
               Row(
                 children: [
-                  Container(
-                    decoration: kBoxDecoration(),
-                    height: 93.0,
-                    width: 92.0,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15),
-                      child: CircleAvatar(
-                        backgroundColor: Colors.white,
+                  InkWell(
+                    onTap: (){
 
-                        child: IconButton(
-                          color: Colors.green,
+                      //remove this also
+
+                    },
+                    child: Container(
+                      decoration: kBoxDecoration(),
+                      height: 93.0,
+                      width: 92.0,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+
+                          child: IconButton(
+                            color: Colors.green,
 
 
-                          icon: Flexible(child: Icon(Icons.set_meal_rounded,size: 32,)),
+                            icon: Flexible(child: Icon(Icons.set_meal_rounded,size: 32,)),
 
-                          onPressed: (){
-
-                          },
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => Search_Loc()));
+                            },
+                          ),
                         ),
                       ),
-                    ),
 
+                    ),
                   ),
 
                   SizedBox(
