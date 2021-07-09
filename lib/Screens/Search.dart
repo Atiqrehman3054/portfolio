@@ -23,23 +23,21 @@ class _SerachState extends State<Serach> {
                     SizedBox(
                       width: 5,
                     ),
-                    new Flexible(
-                      child: new TextField(
-                        decoration: InputDecoration(
-                          hoverColor: Colors.grey[300],
-                          focusColor: Colors.grey[300],
-                          prefixIcon: IconButton(
-                            icon: Icon(Icons.search),
-                            color: Colors.black,
-                            onPressed: () {},
-                          ),
-                          hintText: 'Search_Location',
-                          fillColor: Colors.grey[300],
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                            BorderSide(color: Colors.grey[300], width: 32.0),
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
+                    new TextField(
+                      decoration: InputDecoration(
+                        hoverColor: Colors.grey[300],
+                        focusColor: Colors.grey[300],
+                        prefixIcon: IconButton(
+                          icon: Icon(Icons.search),
+                          color: Colors.black,
+                          onPressed: () {},
+                        ),
+                        hintText: 'Search_Location',
+                        fillColor: Colors.grey[300],
+                        focusedBorder: OutlineInputBorder(
+                          borderSide:
+                          BorderSide(color: Colors.grey[300], width: 32.0),
+                          borderRadius: BorderRadius.circular(20.0),
                         ),
                       ),
                     ),

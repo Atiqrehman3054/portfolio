@@ -122,11 +122,13 @@ class _HomePageState extends State<HomePage> {
                                     backgroundColor: Colors.white,
                                     child: IconButton(
                                       color: Colors.green,
-                                      icon: Flexible(
-                                          child: Icon(
-                                        Icons.charging_station,
-                                        size: 32,
-                                      )),
+                                      icon: Center        (
+                                        child: Flexible(
+                                            child: Icon(
+                                          Icons.charging_station,
+                                          size: 32,
+                                        )),
+                                      ),
                                       onPressed: () {
 
 
@@ -361,7 +363,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
 
                     //remove this
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => AllPlace() ));
+
                   },
                   child: Container(
                     height: 102.78,

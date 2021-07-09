@@ -48,7 +48,7 @@ class _ServicesState extends State<Services> {
                             icon: Flexible(child: Icon(Icons.set_meal_rounded,size: 32,)),
 
                             onPressed: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => Search_Loc()));
+
                             },
                           ),
                         ),
