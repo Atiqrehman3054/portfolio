@@ -257,7 +257,7 @@ final cont = InkWell(
                       style: TextStyle(fontSize: 12),
                     ),
                     SizedBox(
-                      width: 75.33,
+                      width: 66.33,
                     ),
                     Icon(
                       Icons.star,
@@ -337,7 +337,7 @@ final cont1 = InkWell(
                       style: TextStyle(fontSize: 12),
                     ),
                     SizedBox(
-                      width: 75.33,
+                      width: 66.33,
                     ),
                     Icon(
                       Icons.star,
@@ -417,7 +417,7 @@ final cont2 = InkWell(
                       style: TextStyle(fontSize: 12),
                     ),
                     SizedBox(
-                      width: 75.33,
+                      width: 66.33,
                     ),
                     Icon(
                       Icons.star,
@@ -497,7 +497,7 @@ final cont3 = InkWell(
                       style: TextStyle(fontSize: 12),
                     ),
                     SizedBox(
-                      width: 75.33,
+                      width: 66.33,
                     ),
                     Icon(
                       Icons.star,
@@ -577,7 +577,7 @@ final cont4 = InkWell(
                       style: TextStyle(fontSize: 12),
                     ),
                     SizedBox(
-                      width: 75.33,
+                      width: 66.33,
                     ),
                     Icon(
                       Icons.star,
