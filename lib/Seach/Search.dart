@@ -1,43 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants.dart';
+import 'package:portfolio/size_config.dart';
 
-class Serach extends StatefulWidget {
+class Search extends StatefulWidget {
   @override
-  _SerachState createState() => _SerachState();
+  _SearchState createState() => _SearchState();
 }
 
-class _SerachState extends State<Serach> {
+class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SafeArea(
         child: Scaffold(
-          backgroundColor: Colors.grey[100],
+          backgroundColor: kBackgroundColor,
       body: ListView(
         children: [
+
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
             child: Column(
               children: [
+
                 new Row(
                   children: <Widget>[
                     Icon(Icons.arrow_back_ios_outlined),
                     SizedBox(
                       width: 5,
                     ),
-                    new TextField(
-                      decoration: InputDecoration(
-                        hoverColor: Colors.grey[300],
-                        focusColor: Colors.grey[300],
-                        prefixIcon: IconButton(
-                          icon: Icon(Icons.search),
-                          color: Colors.black,
-                          onPressed: () {},
-                        ),
-                        hintText: 'Search_Location',
-                        fillColor: Colors.grey[300],
-                        focusedBorder: OutlineInputBorder(
-                          borderSide:
-                          BorderSide(color: Colors.grey[300], width: 32.0),
-                          borderRadius: BorderRadius.circular(20.0),
+                    new Flexible(
+                      child: new TextField(
+                        decoration: InputDecoration(
+                          hoverColor: Colors.grey[300],
+                          focusColor: Colors.grey[300],
+                          prefixIcon: IconButton(
+                            icon: Icon(Icons.search),
+                            color: Colors.black,
+                            onPressed: () {},
+                          ),
+                          hintText: 'Search_Location',
+                          fillColor: Colors.grey[300],
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                            BorderSide(color: Colors.grey[300], width: 32.0),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
                         ),
                       ),
                     ),
@@ -88,7 +95,7 @@ class _SerachState extends State<Serach> {
                     )
                   ),
                   SizedBox(
-                    width: 9.90,
+                    width: 4.90,
                   ),
                   Container(
                       decoration: BoxDecoration(
@@ -115,7 +122,7 @@ class _SerachState extends State<Serach> {
                   ),
 
                   SizedBox(
-                    width: 9.90,
+                    width: 4.90,
                   ),
 
                   Container(
@@ -142,7 +149,7 @@ class _SerachState extends State<Serach> {
                       )
                   ),
                   SizedBox(
-                    width: 9.90,
+                    width: 4.90,
                   ),
 
                   Container(
@@ -185,7 +192,7 @@ class _SerachState extends State<Serach> {
                 SizedBox(
                   height: 6.1,
                 ),
-      Row(
+                Row(
         children: [
           FittedBox(
             fit: BoxFit.cover,
@@ -324,7 +331,7 @@ class _SerachState extends State<Serach> {
             ),
           ),
           SizedBox(
-            width: 20.20,
+            width: 12.20,
           ),
           FittedBox(
             fit: BoxFit.cover,
@@ -608,7 +615,7 @@ class _SerachState extends State<Serach> {
                       ),
                     ),
                     SizedBox(
-                      width: 20.20,
+                      width: 12.20,
                     ),
                     FittedBox(
                       fit: BoxFit.cover,
@@ -892,7 +899,7 @@ class _SerachState extends State<Serach> {
                       ),
                     ),
                     SizedBox(
-                      width: 20.20,
+                      width: 12.20,
                     ),
                     FittedBox(
                       fit: BoxFit.cover,

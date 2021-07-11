@@ -7,28 +7,27 @@ import 'package:portfolio/Restaurents_list/Restaurents_list.dart';
 import 'package:portfolio/size_config.dart';
 
 class Restaurentdet extends StatefulWidget {
-
   @override
   _RestaurentdetState createState() => _RestaurentdetState();
 }
 
-class _RestaurentdetState extends State<Restaurentdet> with SingleTickerProviderStateMixin{
+class _RestaurentdetState extends State<Restaurentdet>
+    with SingleTickerProviderStateMixin {
   TabController _controller;
 
   @override
-
   void initState() {
     // TODO: implement initState
-    _controller = TabController(length: 3, vsync: this, initialIndex:1 );
+    _controller = TabController(length: 3, vsync: this, initialIndex: 1);
   }
 
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return SafeArea(child: Scaffold(
+    return SafeArea(
+        child: Scaffold(
       body: ListView(
         children: [
           app,
-
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
@@ -37,45 +36,29 @@ class _RestaurentdetState extends State<Restaurentdet> with SingleTickerProvider
                   labelColor: Colors.black,
                   controller: _controller,
                   tabs: [
-
-
-
                     Tab(
                       text: 'About',
-
                     ),
-
                     Tab(
                       text: 'Food Menu',
                     ),
                     Tab(
                       text: 'Reviews',
                     ),
-
                   ],
                 ),
                 Container(
                   height: MediaQuery.of(context).size.height,
-                  width:  MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.height,
                   child: TabBarView(
                     controller: _controller,
                     children: [
-
-
-                     About_main(),
-                     Food_main(),
+                      About_main(),
+                      Food_main(),
                       Text('sfdafd'),
-
-
                     ],
                   ),
                 ),
-
-
-
-
-
-
               ],
             ),
           )

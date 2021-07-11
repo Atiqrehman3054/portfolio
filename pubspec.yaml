@@ -50,10 +50,6 @@ flutter:
   assets:
     - Images/
     - Images/assets/
-    - Images/name.jpg
-    - Images/profile.png
-    - Images/app.PNG
-    - Images/first.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -303,7 +303,7 @@ final cont1 = InkWell(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
             image: DecorationImage(
-              image: AssetImage('Images/assets/summer.png'),
+              image: AssetImage('Images/assets/image12.png'),
               fit: BoxFit.fill,
             ),
             shape: BoxShape.rectangle,
@@ -383,7 +383,7 @@ final cont2 = InkWell(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
             image: DecorationImage(
-              image: AssetImage('Images/assets/mariana.png'),
+              image: AssetImage('Images/assets/image9.png'),
               fit: BoxFit.fill,
             ),
             shape: BoxShape.rectangle,
@@ -543,7 +543,7 @@ final cont4 = InkWell(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
             image: DecorationImage(
-              image: AssetImage('Images/assets/aa.png'),
+              image: AssetImage('Images/assets/Image1.png'),
               fit: BoxFit.fill,
             ),
             shape: BoxShape.rectangle,

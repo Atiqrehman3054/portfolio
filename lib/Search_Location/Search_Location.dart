@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/Screens/Services.dart';
+import 'package:portfolio/Services/Services.dart';
 
 class Search_Loc extends StatefulWidget {
   @override

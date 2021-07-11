@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/size_config.dart';
 
-import 'Services.dart';
+import '../Services/Services.dart';
 
 class AllPlace extends StatefulWidget {
   @override
@@ -10,13 +11,15 @@ class AllPlace extends StatefulWidget {
 class _AllPlaceState extends State<AllPlace> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SafeArea(
         child: Scaffold(
+
       backgroundColor: Colors.grey[100],
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 30),
             child: Column(
               children: [
                 new Row(
@@ -67,7 +70,7 @@ class _AllPlaceState extends State<AllPlace> {
                 ),
 
                 SizedBox(
-                  height: 16.7,
+                  height: 12.7,
                 ),
                 Row(
                   children: [
@@ -94,7 +97,7 @@ class _AllPlaceState extends State<AllPlace> {
                           ],
                         )),
                     SizedBox(
-                      width: 9.90,
+                      width: 5.90,
                     ),
                     Container(
                         decoration: BoxDecoration(
@@ -117,7 +120,7 @@ class _AllPlaceState extends State<AllPlace> {
                           ],
                         )),
                     SizedBox(
-                      width: 9.90,
+                      width: 5.90,
                     ),
                     Container(
                         decoration: BoxDecoration(
@@ -140,7 +143,7 @@ class _AllPlaceState extends State<AllPlace> {
                           ],
                         )),
                     SizedBox(
-                      width: 9.90,
+                      width: 5.90,
                     ),
                     Container(
                         decoration: BoxDecoration(
@@ -176,7 +179,7 @@ class _AllPlaceState extends State<AllPlace> {
                   ],
                 ),
                 SizedBox(
-                  height: 8.6,
+                  height: 6.6,
                 ),
                 Row(
                   children: [
@@ -201,7 +204,7 @@ class _AllPlaceState extends State<AllPlace> {
                                     borderRadius: BorderRadius.circular(12),
                                     image: DecorationImage(
                                       image: AssetImage(
-                                          'Images/assets/cinema.png'),
+                                          'Images/assets/image5.png'),
                                       fit: BoxFit.fill,
                                     ),
                                     shape: BoxShape.rectangle,
@@ -985,6 +988,7 @@ class _AllPlaceState extends State<AllPlace> {
                   height: 14.69,
                 ),
                 Row(
+
                   children: [
                     FittedBox(
                       fit: BoxFit.cover,

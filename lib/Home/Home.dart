@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/Notification/Notification.dart';
-import 'package:portfolio/Screens/All.dart';
-import 'package:portfolio/Screens/Search.dart';
+import 'package:portfolio/All_Place/All.dart';
+import 'package:portfolio/Restaurents_list/Restaurents_list.dart';
+import 'package:portfolio/Seach/Search.dart';
+import 'package:portfolio/size_config.dart';
 
-import 'Services.dart';
+import '../Services/Services.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,7 +14,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SafeArea(
         child: Scaffold(
       backgroundColor: Colors.grey[200],
@@ -50,47 +54,74 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 40),
-                  child: new TextField(
-                    decoration: InputDecoration(
-                      hoverColor: Colors.grey[300],
-                      focusColor: Colors.grey[300],
-                      prefixIcon: IconButton(
-                        icon: Icon(Icons.search),
-                        color: Colors.black,
-                        onPressed: () {},
-                      ),
-                      hintText: 'Search_Location',
-                      fillColor: Colors.grey[300],
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
+                new Row(
+                  children: <Widget>[
+                    Icon(Icons.arrow_back_ios_outlined),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    new Flexible(
+                      child: new TextField(
+                        decoration: InputDecoration(
+                          hoverColor: Colors.grey[300],
+                          focusColor: Colors.grey[300],
+                          prefixIcon: IconButton(
+                            icon: Icon(Icons.search),
+                            color: Colors.black,
+                            onPressed: () {},
+                          ),
+                          hintText: 'Search_Location',
+                          fillColor: Colors.grey[300],
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
                             BorderSide(color: Colors.grey[300], width: 32.0),
-                        borderRadius: BorderRadius.circular(20.0),
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+
+                    SizedBox(
+                      width: 10,
+                    ),
+                    ClipOval(
+                      child: Material(
+                        color: Colors.green, // button color
+                        child: InkWell(
+                          splashColor: Colors.red, // inkwell color
+                          child: SizedBox(width: 56, height: 56, child: Icon(Icons.menu,color: Colors.white,)),
+                          onTap: () {
+
+                          },
+                        ),
+                      ),
+                    ),
+
+
+                  ],
                 ),
 
                 SizedBox(
                   height: 35,
                 ),
 
-                Row(
-                  children: [
-                    Text(
-                      'Services',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                    ),
-                    SizedBox(
-                      width: 226,
-                    ),
-                    Text('See All'),
-                  ],
+                FittedBox(
+                  child: Row(
+                    children: [
+                      Text(
+                        'Services',
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                      SizedBox(
+                        width: 226,
+                      ),
+                      Text('See All'),
+                    ],
+                  ),
                 ),
 
                 SizedBox(
@@ -117,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 84.94,
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 15),
+                                      horizontal: 8),
                                   child: CircleAvatar(
                                     backgroundColor: Colors.white,
                                     child: IconButton(
@@ -156,18 +187,20 @@ class _HomePageState extends State<HomePage> {
                   height: 34.53,
                 ),
 
-                Row(
-                  children: [
-                    Text(
-                      'Recommended Resraurants',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                    ),
-                    SizedBox(
-                      width: 50,
-                    ),
-                    Text('See All'),
-                  ],
+                FittedBox(
+                  child: Row(
+                    children: [
+                      Text(
+                        'Recommended Resraurants',
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      Text('See All'),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 17.76,
@@ -190,7 +223,7 @@ class _HomePageState extends State<HomePage> {
 
 
                                 //Remove this also
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => Serach() ));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => Search() ));
                               },
                               child: Container(
                                 height: 228.52,
@@ -335,24 +368,27 @@ class _HomePageState extends State<HomePage> {
                   height: 38.69,
                 ),
 
-                Row(
-                  children: [
-                    Text(
-                      'Nearby Place '
-                      '',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    SizedBox(
-                      width: 189,
-                    ),
-                    Text(
-                      'See All',
-                      style: TextStyle(
-                        fontSize: 14,
+                
+                FittedBox(
+                  child: Row(
+                    children: [
+                      Text(
+                        'Nearby Place '
+                        '',
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        width: 189,
+                      ),
+                      Text(
+                        'See All',
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
 
                 SizedBox(
@@ -362,91 +398,93 @@ class _HomePageState extends State<HomePage> {
                 InkWell(
                   onTap: () {
 
-                    //remove this
+                 
 
                   },
-                  child: Container(
-                    height: 102.78,
-                    width: 343,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                              image: AssetImage('Images/employee.png'),
-                              fit: BoxFit.fill,
-                            ),
-                            shape: BoxShape.rectangle,
+                  child: FittedBox(
+                    child: Container(
+                      height: 102.78,
+                      width: 343,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 10,
                           ),
-                          height: 80,
-                          width: 120,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Laaz Pharma',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
-                            ),
-                            SizedBox(
-                              height: 9.6,
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Icon(Icons.location_on_outlined, size: 14),
-                                Row(
-                                  children: [
-                                    Text(
-                                      'Dallas,Texas',
-                                      style: TextStyle(fontSize: 12),
-                                    ),
-                                    SizedBox(
-                                      width: 75.33,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      size: 12,
-                                      color: Colors.yellow,
-                                    ),
-                                    Text(
-                                      '5.0',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 9.6,
-                            ),
-                            Text(
-                              '24/7 Open',
-                              style: TextStyle(
-                                fontSize: 12,
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                              image: DecorationImage(
+                                image: AssetImage('Images/employee.png'),
+                                fit: BoxFit.fill,
                               ),
+                              shape: BoxShape.rectangle,
                             ),
-                          ],
-                        )
-                      ],
+                            height: 80,
+                            width: 120,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Laaz Pharma',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                              SizedBox(
+                                height: 9.6,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Icon(Icons.location_on_outlined, size: 14),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Dallas,Texas',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                      SizedBox(
+                                        width: 75.33,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        size: 12,
+                                        color: Colors.yellow,
+                                      ),
+                                      Text(
+                                        '5.0',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 9.6,
+                              ),
+                              Text(
+                                '24/7 Open',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -455,90 +493,92 @@ class _HomePageState extends State<HomePage> {
                   height: 12.69,
                 ),
 
-                InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 102.78,
-                    width: 343,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                              image: AssetImage('Images/thrid.png'),
-                              fit: BoxFit.fill,
-                            ),
-                            shape: BoxShape.rectangle,
+                FittedBox(
+                  child: InkWell(
+                    onTap: () {},
+                    child: Container(
+                      height: 102.78,
+                      width: 343,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 10,
                           ),
-                          height: 80,
-                          width: 120,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Fair Fax cinema',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
-                            ),
-                            SizedBox(
-                              height: 9.6,
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Icon(Icons.location_on_outlined, size: 14),
-                                Row(
-                                  children: [
-                                    Text(
-                                      'Dallas,Texas',
-                                      style: TextStyle(fontSize: 12),
-                                    ),
-                                    SizedBox(
-                                      width: 75.33,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      size: 12,
-                                      color: Colors.yellow,
-                                    ),
-                                    Text(
-                                      '5.0',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 9.6,
-                            ),
-                            Text(
-                              '35 Seats Available',
-                              style: TextStyle(
-                                fontSize: 12,
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                              image: DecorationImage(
+                                image: AssetImage('Images/thrid.png'),
+                                fit: BoxFit.fill,
                               ),
+                              shape: BoxShape.rectangle,
                             ),
-                          ],
-                        )
-                      ],
+                            height: 80,
+                            width: 120,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Fair Fax cinema',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                              SizedBox(
+                                height: 9.6,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Icon(Icons.location_on_outlined, size: 14),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Dallas,Texas',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                      SizedBox(
+                                        width: 75.33,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        size: 12,
+                                        color: Colors.yellow,
+                                      ),
+                                      Text(
+                                        '5.0',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 9.6,
+                              ),
+                              Text(
+                                '35 Seats Available',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -547,90 +587,92 @@ class _HomePageState extends State<HomePage> {
                   height: 12.69,
                 ),
 
-                InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 102.78,
-                    width: 343,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                              image: AssetImage('Images/second.png'),
-                              fit: BoxFit.fill,
-                            ),
-                            shape: BoxShape.rectangle,
+                FittedBox(
+                  child: InkWell(
+                    onTap: () {},
+                    child: Container(
+                      height: 102.78,
+                      width: 343,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 10,
                           ),
-                          height: 80,
-                          width: 120,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'The Blue',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 16),
-                            ),
-                            SizedBox(
-                              height: 9.6,
-                            ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Icon(Icons.location_on_outlined, size: 14),
-                                Row(
-                                  children: [
-                                    Text(
-                                      'Dallas,Texas',
-                                      style: TextStyle(fontSize: 12),
-                                    ),
-                                    SizedBox(
-                                      width: 75.33,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      size: 12,
-                                      color: Colors.yellow,
-                                    ),
-                                    Text(
-                                      '5.0',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 9.6,
-                            ),
-                            Text(
-                              '35 Seats Available',
-                              style: TextStyle(
-                                fontSize: 12,
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                              image: DecorationImage(
+                                image: AssetImage('Images/second.png'),
+                                fit: BoxFit.fill,
                               ),
+                              shape: BoxShape.rectangle,
                             ),
-                          ],
-                        )
-                      ],
+                            height: 80,
+                            width: 120,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'The Blue',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                              SizedBox(
+                                height: 9.6,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Icon(Icons.location_on_outlined, size: 14),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Dallas,Texas',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                      SizedBox(
+                                        width: 75.33,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        size: 12,
+                                        color: Colors.yellow,
+                                      ),
+                                      Text(
+                                        '5.0',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 9.6,
+                              ),
+                              Text(
+                                '35 Seats Available',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -639,26 +681,28 @@ class _HomePageState extends State<HomePage> {
                   height: 39.44,
                 ),
 
-                Row(
-                  children: [
-                    Text(
-                      'Popular Listings ',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    SizedBox(
-                      width: 177,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 14,
+                FittedBox(
+                  child: Row(
+                    children: [
+                      Text(
+                        'Popular Listings ',
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                      SizedBox(
+                        width: 177,
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 14,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
 
                 SizedBox(
@@ -674,7 +718,7 @@ class _HomePageState extends State<HomePage> {
                       itemBuilder: (BuildContext context, int index) {
                         return InkWell(
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => Serach() ));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => Search()));
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(right: 12.62),
@@ -828,26 +872,30 @@ class _HomePageState extends State<HomePage> {
                   height: 38.88,
                 ),
 
-                Row(
-                  children: [
-                    Text(
-                      'Events you might check',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-                    SizedBox(
-                      width: 117,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'See All',
-                        style: TextStyle(
-                          fontSize: 14,
+                FittedBox(
+                  child: Row(
+                    children: [
+                      Text(
+                        'Events you might check',
+                        style:
+                            TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
+                      SizedBox(
+                        width: 110,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Resturents_List();
+                        },
+                        child: Text(
+                          'See All',
+                          style: TextStyle(
+                            fontSize: 14,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
 
                 SizedBox(
@@ -856,97 +904,99 @@ class _HomePageState extends State<HomePage> {
 
                 InkWell(
                   onTap: () {},
-                  child: Container(
-                    height: 102.78,
-                    width: 343,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Stack(
-                          children: [
-                            SizedBox(
-                              height: 20,
-                            ),
-                            // Container(
-                            //   decoration: BoxDecoration(
-                            //     borderRadius: BorderRadius.circular(10),
-                            //     color: Colors.white30
-                            //   ),
-                            //   height: 20,
-                            //   width: 100,
-                            //   child: Text('24th Dec',style: TextStyle(
-                            //     color: Colors.white
-                            //   ),),
-                            // ),
-
-                            InkWell(
-                              onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => AllPlace() ));
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(15),
-                                  image: DecorationImage(
-                                    image: AssetImage('Images/image 4.png'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                  shape: BoxShape.rectangle,
-                                ),
-                                height: 80,
-                                width: 120,
+                  child: FittedBox(
+                    child: Container(
+                      height: 102.78,
+                      width: 343,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Stack(
+                            children: [
+                              SizedBox(
+                                height: 20,
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Row(
-                          children: [
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Chrismtmas Fastive',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 13),
-                                ),
-                                SizedBox(
-                                  height: 9.6,
-                                ),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Icon(Icons.location_on_outlined, size: 14),
-                                    Text(
-                                      'Dallas,Texas',
-                                      style: TextStyle(fontSize: 12),
+                              // Container(
+                              //   decoration: BoxDecoration(
+                              //     borderRadius: BorderRadius.circular(10),
+                              //     color: Colors.white30
+                              //   ),
+                              //   height: 20,
+                              //   width: 100,
+                              //   child: Text('24th Dec',style: TextStyle(
+                              //     color: Colors.white
+                              //   ),),
+                              // ),
+
+                              InkWell(
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => AllPlace() ));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(15),
+                                    image: DecorationImage(
+                                      image: AssetImage('Images/image 4.png'),
+                                      fit: BoxFit.fill,
                                     ),
-                                  ],
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  height: 80,
+                                  width: 120,
                                 ),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 40,
-                            ),
-                            Image.asset(
-                              'Images/app.PNG',
-                              height: 40,
-                              width: 40,
-                            ),
-                          ],
-                        )
-                      ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Row(
+                            children: [
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Chrismtmas Fastive',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13),
+                                  ),
+                                  SizedBox(
+                                    height: 9.6,
+                                  ),
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(Icons.location_on_outlined, size: 14),
+                                      Text(
+                                        'Dallas,Texas',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                width: 40,
+                              ),
+                              Image.asset(
+                                'Images/app.PNG',
+                                height: 40,
+                                width: 40,
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -974,17 +1024,7 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               height: 11,
                             ),
-                            // Container(
-                            //   decoration: BoxDecoration(
-                            //     borderRadius: BorderRadius.circular(10),
-                            //     color: Colors.white30
-                            //   ),
-                            //   height: 20,
-                            //   width: 100,
-                            //   child: Text('24th Dec',style: TextStyle(
-                            //     color: Colors.white
-                            //   ),),
-                            // ),
+
 
                             Container(
                               decoration: BoxDecoration(

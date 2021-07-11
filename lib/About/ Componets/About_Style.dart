@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/Restaurents/components/Style.dart';
-import 'package:portfolio/Screens/Services.dart';
+import 'package:portfolio/Services/Services.dart';
 
 final iconbutton =
     InkWell(
@@ -50,7 +50,7 @@ final text = Row(
   ],
 );
 
-final kimage = Image.asset('Images/assets/map1.png');
+final kimage = Image.asset('Images/assets/image8.png');
 
 final map = Row(
   children: [

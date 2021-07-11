@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/Screens/Search_Location.dart';
+import 'package:portfolio/Search_Location/Search_Location.dart';
 
 const titlestyle = TextStyle(fontSize: 20,color: Colors.black);
 
