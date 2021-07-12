@@ -4,6 +4,7 @@ import 'package:portfolio/About/About.dart';
 import 'package:portfolio/Food%20Menu/Food_menu.dart';
 import 'package:portfolio/Restaurents_Details/%20%20Components/DetailsStyle.dart';
 import 'package:portfolio/Restaurents_list/Restaurents_list.dart';
+import 'package:portfolio/Review/Review_main.dart';
 import 'package:portfolio/size_config.dart';
 
 class Restaurentdet extends StatefulWidget {
@@ -55,7 +56,7 @@ class _RestaurentdetState extends State<Restaurentdet>
                     children: [
                       About_main(),
                       Food_main(),
-                      Text('sfdafd'),
+                      Review(),
                     ],
                   ),
                 ),

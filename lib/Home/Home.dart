@@ -885,7 +885,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       InkWell(
                         onTap: () {
-                          Resturents_List();
+                          Restaurents_List();
                         },
                         child: Text(
                           'See All',

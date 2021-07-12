@@ -16,7 +16,7 @@ class About_body extends StatelessWidget {
 
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          padding: const EdgeInsets.symmetric(horizontal: 5.0),
           child: Column(
             children: [
               SizedBox(
